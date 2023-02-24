@@ -1,0 +1,230 @@
+/* 
+--- 01 TYPOGRAPHY SYSTEM
+
+- Font sizes (px):
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Font weights:
+Default: 400
+Medium: 500
+Bold: 600
+Bold italic :600 italic
+
+- Line heights:
+Default: 1
+Small: 1.05
+Paragraph default: 1.6
+
+
+--- 02 COLORS
+
+- Primary:#40c057
+- Tints: #ebfbee
+- Shades:#37b24d
+- Accents:
+- Greys:
+#343a40
+#495057
+#adb5bd
+#868e96
+
+#f8f9fa
+#dfe0e1
+
+--- 05 SHADOWS
+
+--- 06 BORDER-RADIUS
+Default: 8px
+
+--- 07 WHITESPACE
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+
+--- IMAGES SOURCE: unsplash.com
+--- UI FACES: uifaces.co
+
+*/
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+/* REM UNIT - root element fontsize
+default font size from browser is 16 px if i don't specify in the parent element - <html> */
+html {
+  /* font-size: 10px; */
+  /* 10px / 16px = 62.5% */
+  /* Percentage of user's browser font-size settings */
+  font-size: 62.5%;
+}
+body {
+  /* font-family: "Rubik", sans-serif; */
+  font-family: "Lora", serif;
+  line-height: 1;
+  font-weight: 500;
+  color: #495057;
+}
+*:focus {
+  outline: none;
+  outline: 4px dotted #40c057;
+  outline-offset: 8px;
+}
+/* **************************************** */
+/* GENERAL REUSABLE COMPONENTS */
+/* **************************************** */
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 3.2rem;
+}
+.grid {
+  display: grid;
+  row-gap: 9.6rem;
+  column-gap: 6.4rem;
+}
+/* .grid:last-child {
+  margin-bottom: 0;
+} */
+.grid:not(:last-child) {
+  margin-bottom: 9.6rem;
+}
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
+.grid--5-cols {
+  grid-template-columns: repeat(5, 1fr);
+}
+.grid-center-v {
+  align-items: center;
+}
+.heading-primary,
+.heading-secondary,
+.heading-tertiary {
+  font-weight: 600;
+  color: #343a40;
+  letter-spacing: -0.5px;
+}
+.heading-primary {
+  font-size: 7.4rem;
+  font-style: italic;
+  line-height: 1.05;
+  margin-bottom: 4.8rem;
+}
+.heading-secondary {
+  font-size: 4.4rem;
+  line-height: 1.2;
+  margin-bottom: 9.6rem;
+}
+.subheading {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #37b24d;
+  text-transform: uppercase;
+  margin-bottom: 1.6rem;
+  letter-spacing: 0.75px;
+}
+.heading-tertiary {
+  text-transform: uppercase;
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-bottom: 3.2rem;
+}
+.btn,
+.btn:link,
+.btn:visited {
+  display: inline-block;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1.6rem 3.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.btn-full:link,
+.btn-full:visited {
+  background-color: #40c057;
+  color: #fff;
+  transition: background-color 0.3s;
+}
+.btn-full:hover,
+.btn-full:active {
+  background-color: #37b24d;
+  color: #fff;
+}
+
+.btn-outline:link,
+.btn-outline:visited {
+  background-color: #fff;
+  color: #495057;
+  box-shadow: inset 0 0 0 2.3px #40c057;
+}
+.btn-outline:hover,
+.btn-outline:active {
+  background-color: #fff;
+
+  /* border:3px solid #fff; */
+  /* Trick to add border inside */
+  box-shadow: inset 0 0 0 3px #40c057;
+}
+.btn-form {
+  background-color: #133a1a;
+  color: #ebfbee;
+  align-self: end;
+  padding: 1.2rem;
+}
+.btn-form:hover {
+  background-color: #ebfbee;
+  color: #133a1a;
+}
+.link:link,
+.link:visited {
+  /* set to inline-block if you want
+   to use padding top and bottom */
+  display: inline-block;
+  color: #40c057;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+  transition: all 0.3s;
+}
+.link:hover,
+.link:active {
+  color: #37b24d;
+  border-bottom: 1px solid transparent;
+}
+.list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+}
+.list-item {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.6rem;
+}
+.list-icon {
+  font-size: 3rem;
+  color: #40c057;
+}
+
+/* Helper class */
+.margin-right-sm {
+  margin-right: 1.6rem !important;
+}
+.margin-bottom-md {
+  margin-bottom: 4.8rem !important;
+}
+.center-text {
+  text-align: center;
+}
